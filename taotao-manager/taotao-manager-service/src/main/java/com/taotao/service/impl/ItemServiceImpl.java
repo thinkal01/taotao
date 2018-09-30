@@ -27,11 +27,6 @@ import java.util.List;
 
 /**
  * 商品管理Service
- * <p>Title: ItemServiceImpl</p>
- * <p>Description: </p>
- * <p>Company: www.itcast.cn</p>
- *
- * @version 1.0
  */
 @Service
 public class ItemServiceImpl implements ItemService {

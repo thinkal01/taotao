@@ -6,6 +6,6 @@
     <title>淘淘商城后台管理系统</title>
 </head>
 <body>
-taotao-manager-service
+taotao-content-service
 </body>
 </html>
