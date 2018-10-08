@@ -12,7 +12,7 @@ public class TestActiveMq {
     @Test
     public void testQueueProducer() throws Exception {
         //1.创建一个连接工厂对象ConnectionFactory对象。需要指定mq服务的ip及端口
-        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://192.168.25.168:61616");
+        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://192.168.100.155:61616");
         //2.使用ConnectionFactory创建一个连接Connection对象
         Connection connection = connectionFactory.createConnection();
         //3.开启连接。调用Connection对象的start方法
@@ -36,13 +36,12 @@ public class TestActiveMq {
         producer.close();
         session.close();
         connection.close();
-
     }
 
     @Test
     public void testQueueConsumer() throws Exception {
         //创建一个连接工厂对象
-        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://192.168.25.168:61616");
+        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://192.168.100.155:61616");
         //使用连接工厂对象创建一个连接
         Connection connection = connectionFactory.createConnection();
         //开启连接
@@ -55,7 +54,6 @@ public class TestActiveMq {
         MessageConsumer consumer = session.createConsumer(queue);
         //向Consumer对象中设置一个MessageListener对象，用来接收消息
         consumer.setMessageListener(new MessageListener() {
-
             @Override
             public void onMessage(Message message) {
                 //取消息的内容
@@ -88,7 +86,7 @@ public class TestActiveMq {
     @Test
     public void testTopicProducer() throws Exception {
         //创建一个连接工厂对象
-        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://192.168.25.168:61616");
+        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://192.168.100.155:61616");
         //创建连接
         Connection connection = connectionFactory.createConnection();
         //开启连接
@@ -112,7 +110,7 @@ public class TestActiveMq {
     @Test
     public void testTopicConsumser() throws Exception {
         //创建一个连接工厂对象
-        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://192.168.25.168:61616");
+        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://192.168.100.155:61616");
         //使用连接工厂对象创建一个连接
         Connection connection = connectionFactory.createConnection();
         //开启连接

@@ -5,7 +5,7 @@
 
     <!-- JMS服务厂商提供的ConnectionFactory -->
     <bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
-        <constructor-arg name="brokerURL" value="tcp://192.168.25.168:61616"/>
+        <constructor-arg name="brokerURL" value="tcp://192.168.100.155:61616"/>
     </bean>
     <!-- spring对象ConnectionFactory的封装 -->
     <bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
@@ -25,6 +25,7 @@
         <property name="destination" ref="test-queue"/>
         <property name="messageListener" ref="myMessageListener"/>
     </bean>
+
     <bean id="itemAddMessageListener" class="com.taotao.search.listener.ItemAddMessageListener"/>
     <bean class="org.springframework.jms.listener.DefaultMessageListenerContainer">
         <property name="connectionFactory" ref="connectionFactory"/>

@@ -27,6 +27,5 @@ public class SpringActivemq {
                 return message;
             }
         });
-
     }
 }
