@@ -18,7 +18,7 @@ public class TestSolrJ {
     public void testAddDocument() throws Exception {
         //创建一个SolrServer对象。创建一个HttpSolrServer对象
         //需要指定solr服务的url
-        SolrServer solrServer = new HttpSolrServer("http://192.168.25.154:8080/solr/collection1");
+        SolrServer solrServer = new HttpSolrServer("http://192.168.100.155:8080/solr/collection1");
         //创建一个文档对象SolrInputDocument
         SolrInputDocument document = new SolrInputDocument();
         //向文档中添加域，必须有id域，域的名称必须在schema.xml中定义
@@ -33,7 +33,7 @@ public class TestSolrJ {
 
     @Test
     public void deleteDocumentById() throws Exception {
-        SolrServer solrServer = new HttpSolrServer("http://192.168.25.154:8080/solr/collection1");
+        SolrServer solrServer = new HttpSolrServer("http://192.168.100.155:8080/solr/collection1");
         solrServer.deleteById("test001");
         //提交
         solrServer.commit();
@@ -41,7 +41,7 @@ public class TestSolrJ {
 
     @Test
     public void deleteDocumentByQuery() throws Exception {
-        SolrServer solrServer = new HttpSolrServer("http://192.168.25.154:8080/solr/collection1");
+        SolrServer solrServer = new HttpSolrServer("http://192.168.100.155:8080/solr/collection1");
         solrServer.deleteByQuery("item_title:测试商品3");
         solrServer.commit();
     }
@@ -49,7 +49,7 @@ public class TestSolrJ {
     @Test
     public void searchDocumet() throws Exception {
         //创建一个SolrServer对象
-        SolrServer solrServer = new HttpSolrServer("http://192.168.25.154:8080/solr/collection1");
+        SolrServer solrServer = new HttpSolrServer("http://192.168.100.155:8080/solr/collection1");
         //创建一个SolrQuery对象
         SolrQuery query = new SolrQuery();
         //设置查询条件、过滤条件、分页条件、排序条件、高亮

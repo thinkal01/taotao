@@ -26,7 +26,7 @@ public class TestJedis {
     @Test
     public void testJedisPool() throws Exception {
         //创建一个数据库连接池对象（单例），需要指定服务的ip和端口号
-        JedisPool jedisPool = new JedisPool("192.168.25.153", 6379);
+        JedisPool jedisPool = new JedisPool("192.168.100.155", 6379);
         //从连接池中获得连接
         Jedis jedis = jedisPool.getResource();
         //使用Jedis操作数据库（方法级别使用）
@@ -43,12 +43,12 @@ public class TestJedis {
         //创建一个JedisCluster对象，构造参数Set类型，集合中每个元素是HostAndPort类型
         Set<HostAndPort> nodes = new HashSet<>();
         //向集合中添加节点
-        nodes.add(new HostAndPort("192.168.25.153", 7001));
-        nodes.add(new HostAndPort("192.168.25.153", 7002));
-        nodes.add(new HostAndPort("192.168.25.153", 7003));
-        nodes.add(new HostAndPort("192.168.25.153", 7004));
-        nodes.add(new HostAndPort("192.168.25.153", 7005));
-        nodes.add(new HostAndPort("192.168.25.153", 7006));
+        nodes.add(new HostAndPort("192.168.100.155", 7001));
+        nodes.add(new HostAndPort("192.168.100.155", 7002));
+        nodes.add(new HostAndPort("192.168.100.155", 7003));
+        nodes.add(new HostAndPort("192.168.100.155", 7004));
+        nodes.add(new HostAndPort("192.168.100.155", 7005));
+        nodes.add(new HostAndPort("192.168.100.155", 7006));
         JedisCluster jedisCluster = new JedisCluster(nodes);
         //直接使用JedisCluster操作redis，自带连接池。jedisCluster对象可以是单例 的。
         jedisCluster.set("cluster-test", "hello jedis cluster");

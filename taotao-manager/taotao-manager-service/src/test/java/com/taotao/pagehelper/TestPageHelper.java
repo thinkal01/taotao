@@ -23,7 +23,7 @@ public class TestPageHelper {
         TbItemMapper itemMapper = applicationContext.getBean(TbItemMapper.class);
         //创建Example对象
         TbItemExample example = new TbItemExample();
-//		Criteria criteria = example.createCriteria();
+        // Criteria criteria = example.createCriteria();
         List<TbItem> list = itemMapper.selectByExample(example);
         //4.取分页信息。使用PageInfo对象取。
         PageInfo<TbItem> pageInfo = new PageInfo<>(list);

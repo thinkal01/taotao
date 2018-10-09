@@ -22,11 +22,9 @@ public class ContentCategoryController {
 
     @RequestMapping("/content/category/list")
     @ResponseBody
-    public List<EasyUITreeNode> getContentCategoryList(
-            @RequestParam(value = "id", defaultValue = "0") Long parentId) {
+    public List<EasyUITreeNode> getContentCategoryList(@RequestParam(value = "id", defaultValue = "0") Long parentId) {
         List<EasyUITreeNode> list = contentCategoryService.getContentCategoryList(parentId);
         return list;
-
     }
 
     @RequestMapping("/content/category/create")
@@ -36,4 +34,3 @@ public class ContentCategoryController {
         return result;
     }
 }
-

@@ -101,7 +101,6 @@ var TT = TAOTAO = {
             });
         });
     },
-
     // 初始化选择类目组件
     initItemCat: function (data) {
         $(".selectItemCat").each(function (i, e) {
