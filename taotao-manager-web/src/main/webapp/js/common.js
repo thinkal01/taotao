@@ -55,7 +55,6 @@ var TT = TAOTAO = {
             return '未知';
         }
     },
-
     init: function (data) {
         // 初始化图片上传组件
         this.initPicUpload(data);
