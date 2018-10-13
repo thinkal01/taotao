@@ -67,6 +67,7 @@ public class UserController {
         }
         return JsonUtils.objectToJson(result);
     }*/
+
     //jsonp的第二种方法，spring4.1以上版本使用
     @RequestMapping(value = "/user/token/{token}", method = RequestMethod.GET)
     @ResponseBody

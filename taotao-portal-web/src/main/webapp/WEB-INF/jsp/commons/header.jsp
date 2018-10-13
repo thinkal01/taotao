@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <script type="text/javascript" src="/js/base-v1.js" charset="utf-8"></script>
 <!--shortcut start-->
 <jsp:include page="shortcut.jsp" />
@@ -22,7 +21,8 @@
 		<!--search end-->
 		<div id="my360buy-2013">
 			<dl>
-				<dt class="ld"><s></s><a href="http://sso.taotao.com/page/login" clstag="homepage|keycount|home2012|04a">我的淘淘</a><b></b></dt>
+				<%--<dt class="ld"><s></s><a href="http://sso.taotao.com/page/login" clstag="homepage|keycount|home2012|04a">我的淘淘</a><b></b></dt>--%>
+				<dt class="ld"><s></s><a href="http://localhost:8088/page/login" clstag="homepage|keycount|home2012|04a">我的淘淘</a><b></b></dt>
 				<dd>
 					<div class="loading-style1"><b></b>加载中，请稍候...</div>
 				</dd>
@@ -31,7 +31,7 @@
 		<!--my360buy end-->
 		<div id="settleup-2013" clstag="homepage|keycount|home2013|05a">
 			<dl>
-				<dt class="ld"><s></s><span class="shopping"><span id="shopping-amount"></span></span><a href="/cart/cart.html" id="settleup-url">去购物车结算</a> <b></b> </dt>
+				<dt class="ld"><s></s><span class="shopping"><span id="shopping-amount"></span></span><a href="http://localhost:8089/cart/cart.html" id="settleup-url">去购物车结算</a> <b></b> </dt>
 <!-- 				<dd>
 					<div class="prompt">
 						<div class="loading-style1"><b></b>加载中，请稍候...</div>
@@ -153,5 +153,10 @@
 	</div>
 </div>
 <script type="text/javascript">
-(function(){if(pageConfig.navId){var object=document.getElementById("nav-"+pageConfig.navId);if(object)object.className+=" curr";}})();
+    (function () {
+        if (pageConfig.navId) {
+            var object = document.getElementById("nav-" + pageConfig.navId);
+            if (object) object.className += " curr";
+        }
+    })();
 </script>

@@ -1,16 +1,15 @@
 package com.taotao.search.service.impl;
 
-import java.util.List;
-
+import com.taotao.common.pojo.SearchItem;
+import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.search.mapper.SearchItemMapper;
+import com.taotao.search.service.SearchItemService;
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.common.SolrInputDocument;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.taotao.common.pojo.SearchItem;
-import com.taotao.common.pojo.TaotaoResult;
-import com.taotao.search.mapper.SearchItemMapper;
-import com.taotao.search.service.SearchItemService;
+import java.util.List;
 
 /**
  * 商品数据导入索引库

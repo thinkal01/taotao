@@ -64,7 +64,7 @@ function clothingAbTest() {
 }(), function() {
     var a = $("#footer-2013 a[href='http://about.58.com/fqz/index.html']");
     a.length && a.attr("href", "http://www.bj.cyberpolice.cn/index.do")
-}(), "object" != typeof JSON && (JSON = {}), function() {
+}(), "object" != typeof JSON && (JSON == {}), function() {
     function f(a) {
         return 10 > a ? "0" + a : a
     }

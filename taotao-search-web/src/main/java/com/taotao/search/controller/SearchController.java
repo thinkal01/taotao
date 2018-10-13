@@ -1,16 +1,13 @@
 package com.taotao.search.controller;
 
+import com.taotao.common.pojo.SearchResult;
+import com.taotao.search.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import com.taotao.common.pojo.SearchResult;
-import com.taotao.search.service.SearchService;
-
-import javassist.compiler.ast.Pair;
 
 /**
  * 搜索服务Controller
@@ -25,8 +22,7 @@ public class SearchController {
     private Integer SEARCH_RESULT_ROWS;
 
     @RequestMapping("/search")
-    public String search(@RequestParam("q") String queryString,
-                         @RequestParam(defaultValue = "1") Integer page, Model model) throws Exception {
+    public String search(@RequestParam("q") String queryString, @RequestParam(defaultValue = "1") Integer page, Model model) throws Exception {
         //int a = 1/0;
         //调用服务执行查询
         //把查询条件进行转码，解决get乱码问题

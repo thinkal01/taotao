@@ -7,17 +7,17 @@
 	<head>
 	<meta http-equiv="pragma" content="no-cache" />
     <meta http-equiv="cache-control" content="no-cache" />
-    <meta http-equiv="expires" content="0" /> 
-    <meta name="format-detection" content="telephone=no" />  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+    <meta http-equiv="expires" content="0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="format-detection" content="telephone=no" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>订单结算页 -淘淘商城</title>
-	<!--结算页面样式-->	
+	<!--结算页面样式-->
 	<link rel="stylesheet" type="text/css" href="/css/base.css" media="all" />
-    <link type="text/css" rel="stylesheet"  href="/css/order-commons.css" source="widget"/>	
+    <link type="text/css" rel="stylesheet"  href="/css/order-commons.css" source="widget"/>
 	<script type="text/javascript" src="/js/jquery-1.6.4.js"></script>
-	<script type="text/javascript" src="/js/base.js"></script>	
+	<script type="text/javascript" src="/js/base.js"></script>
 	<script type="text/javascript" src="/js/order.common.js"></script>
 	<script type="text/javascript" src="/js/jquery.checkout.js"></script>
 </head>	<body id="mainframe">
@@ -102,7 +102,7 @@
 	</div>
 </div>
 <!--/ /widget/consignee-step/consignee-step.tpl -->
-	
+
 <!--/ /widget/shopping-list/shopping-list.tpl -->
 <div id="shipAndSkuInfo">
   <div id="payShipAndSkuInfo">
@@ -155,8 +155,8 @@
 						<!--  span class="qmark-icon qmark-tip" data-tips="在线支付，支持绝大多数银行借记卡及部分银行信用卡 <a href='http://help.jd.com/help/question-68.html' target='_blank' class='ftx-05'>查看银行及限额</a>"></span -->
 						<!-- span class="qmark-icon qmark-tip" data-tips="通过快钱平台收款  汇款后1-3个工作日到账 <a target='_blank' href='http://help.jd.com/help/question-69.html'>查看帮助</a>"></span -->
 					</div>
-				</li> 
-				<!--div id="shipment"></div--> 
+				</li>
+				<!--div id="shipment"></div-->
 				<script>
 					$('.online-payment').hover(function() {
 						$(this).addClass('payment-item-hover');
@@ -177,11 +177,11 @@
 </div>
 <div class="step-cont" id="skuPayAndShipment-cont">
 	<!--添加商品清单  zhuqingjie -->
-<div class="shopping-lists" id="shopping-lists"> 
+<div class="shopping-lists" id="shopping-lists">
 <div class="shopping-list ABTest">
 	<div class="goods-list">
      <!--配送方式-->
-    <h4 class="vendor_name_h" id="0">商家：淘淘商城</h4>		         
+    <h4 class="vendor_name_h" id="0">商家：淘淘商城</h4>
     <div class="goods-suit goods-last">
 	 <c:forEach items="${cartList }" var="cart">
 		<div class="goods-item goods-item-extra">
@@ -194,7 +194,7 @@
 			<div class="goods-msg">
 				<div class="p-name">
 					<a href="/item/${cart.id}.html" target="_blank">
-						${cart.title } 
+						${cart.title }
 					</a>
 				</div>
 				<div class="p-price">
@@ -203,7 +203,7 @@
 							groupingUsed="false" maxFractionDigits="2"
 							minFractionDigits="2" value="${cart.price / 100 }" /></strong>
 					<!--增加预售金额显示 end-->
-					<span class="ml20"> x${cart.num} </span> 
+					<span class="ml20"> x${cart.num} </span>
 					<span class="ml20 p-inventory" skuId="11555193">有货</span>
 				</div>
 				<i class="p-icon p-icon-w"></i><span class="ftx-04">7天无理由退货</span>
@@ -211,7 +211,7 @@
 			<div class="clr"></div>
 		</div>
 	</c:forEach>
-	</div>                   
+	</div>
 </div>
 <!--goods-list 结束-->
 <div class="dis-modes">
@@ -238,12 +238,12 @@
 	<strong class="ftx-01" style="color: #666"
 			freightByVenderId="0" popJdShipment="false">免运费</strong>
 </div>
-</div>	
-				
 </div>
-</div>  
+
 </div>
-</div>			
+</div>
+</div>
+</div>
 <!--  /widget/invoice-step/invoice-step.tpl -->
 <div class="step-tit">
 	<h3>发票信息</h3>
@@ -261,7 +261,7 @@
 				<div class="list">
 					<span>
 						总商品金额：
-					</span> 
+					</span>
 					<em class="price" id="warePriceId">¥<fmt:formatNumber value="${totalPrice / 100}" maxFractionDigits="2" minFractionDigits="2" groupingUsed="true"/></em>
 				</div>
 				<div class="list">
@@ -278,7 +278,7 @@
 	</div>
 </div>
 <!--/ /widget/order-summary/order-summary.tpl -->
-					
+
 <!--  /widget/checkout-floatbar/checkout-floatbar.tpl -->
 <div class="trade-foot">
   <div id="checkout-floatbar" class="group">
@@ -287,13 +287,13 @@
       </div>
       <div class="sticky-wrap">
       	<div class="inner">
-          <button type="submit" class="checkout-submit btn-1" 
+          <button type="submit" class="checkout-submit btn-1"
           		  id="order-submit"	onclick="$('#orderForm').submit()">
           	提交订单
           </button>
                     <span class="total">应付总额：<strong id="payPriceId">￥<fmt:formatNumber value="${totalPrice / 100}" maxFractionDigits="2" minFractionDigits="2" groupingUsed="true"/></strong>
           </span>
-                    <span id="checkCodeDiv"></span>
+			<span id="checkCodeDiv"></span>
           <div class="checkout-submit-tip" id="changeAreaAndPrice" style="display: none;">
             由于价格可能发生变化，请核对后再提交订单
           </div>
@@ -306,11 +306,9 @@
     	</div>
     </div>
   </div>
-  
         </div>
       </div>
     </div>
-
   </div>
 </div>
 

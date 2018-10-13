@@ -6,9 +6,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
    <meta http-equiv="pragma" content="no-cache">
    <meta http-equiv="cache-control" content="no-cache">
-   <meta http-equiv="expires" content="0"> 
-   <meta name="format-detection" content="telephone=no">  
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+   <meta http-equiv="expires" content="0">
+   <meta name="format-detection" content="telephone=no">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
    <meta name="format-detection" content="telephone=no">
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <link rel="stylesheet" href="/css/base.css">
@@ -17,12 +17,12 @@
    <script>
    	var pageConfig  = {};
    </script>
-<body> 
+<body>
 <!--shortcut start-->
 <jsp:include page="commons/shortcut.jsp" />
 <!--shortcut end-->
 <div class="w w1 header clearfix">
-	<div id="logo"><a href="/"><img clstag="clickcart|keycount|xincart|logo" src="/images/taotao-logo.gif" title="返回淘淘商城首页" alt="返回淘淘商城首页"></a></div>
+	<div id="logo"><a href="http://localhost:8082"><img clstag="clickcart|keycount|xincart|logo" src="/images/taotao-logo.gif" title="返回淘淘商城首页" alt="返回淘淘商城首页"></a></div>
     <div class="language"><a href="javascript:void(0);" onclick="toEnCart()"></a></div>
 	<div class="progress clearfix">
 		<ul class="progress-1">
@@ -37,7 +37,7 @@
 		<h2>我的购物车</h2>
 	</div>
 	<div id="show">
-	
+
 <div class="cart-frame">
     <div class="tl"></div>
     <div class="tr"></div>
@@ -65,11 +65,11 @@
 		                	<a href="/item/${cart.id }.html" target="_blank">
 		                		<img clstag="clickcart|keycount|xincart|p-imglistcart" src="${cart.image}" alt="${cart.title}" width="52" height="52">
 		                	</a>
-		                </div>    
+		                </div>
 		                <div class="p-name">
 		                	<a href="/item/${cart.id }.html" clstag="clickcart|keycount|xincart|productnamelink" target="_blank">${cart.title}</a>
 		                	<span class="promise411 promise411_11345721" id="promise411_11345721"></span>
-		                </div>    
+		                </div>
 		            </div>
 		            <div class="cell p-price"><span class="price">¥<fmt:formatNumber groupingUsed="false" value="${cart.price / 100}" maxFractionDigits="2" minFractionDigits="2"/> </span></div>
 		            <div class="cell p-promotion">
@@ -85,9 +85,8 @@
 		            <div class="cell p-remove"><a id="remove-11345721-1" data-more="removed-87.20-1" clstag="clickcart|keycount|xincart|btndel318558" class="cart-remove" href="/cart/delete/${cart.id}.html">删除</a>
 		            </div>
 		        </div>
-	        </div> 
+	        </div>
         </c:forEach>
-        
     </div><!-- product-list结束 -->
           <div class="cart-toolbar clearfix">
             <div class="total fr">
@@ -143,7 +142,6 @@
 </div>
 <!--推荐位html修改处-->
 
-
 <script type="text/javascript" src="/js/base-v1.js"></script>
 <!-- footer start -->
 <jsp:include page="commons/footer.jsp" />
@@ -152,5 +150,4 @@
 <!-- 购物车相关业务 -->
 <script type="text/javascript" src="/js/cart.js"></script>
 <script type="text/javascript" src="/js/jquery.price_format.2.0.min.js"></script>
-
 </html>

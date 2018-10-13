@@ -3,6 +3,7 @@ package com.taotao.controller;
 import com.taotao.common.pojo.EasyUIDataGridResult;
 import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.pojo.TbItem;
+import com.taotao.pojo.TbItemDesc;
 import com.taotao.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,13 @@ public class ItemController {
     public TbItem getItemById(@PathVariable Long itemId) {
         TbItem tbItem = itemService.getItemById(itemId);
         return tbItem;
+    }
+
+    @RequestMapping("/item/desc/{itemId}")
+    @ResponseBody
+    public TaotaoResult getItemDescById(@PathVariable Long itemId) {
+        TbItemDesc itemDesc = itemService.getItemDescById(itemId);
+        return TaotaoResult.ok(itemDesc);
     }
 
     @RequestMapping("/item/list")

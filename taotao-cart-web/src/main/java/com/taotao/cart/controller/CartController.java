@@ -21,11 +21,6 @@ import java.util.List;
 
 /**
  * 购物车管理Controller
- * <p>Title: CartController</p>
- * <p>Description: </p>
- * <p>Company: www.itcast.cn</p>
- *
- * @version 1.0
  */
 @Controller
 public class CartController {
@@ -39,9 +34,7 @@ public class CartController {
     private ItemService itemService;
 
     @RequestMapping("/cart/add/{itemId}")
-    public String addItemCart(@PathVariable Long itemId,
-                              @RequestParam(defaultValue = "1") Integer num, HttpServletRequest request,
-                              HttpServletResponse response) {
+    public String addItemCart(@PathVariable Long itemId, @RequestParam(defaultValue = "1") Integer num, HttpServletRequest request, HttpServletResponse response) {
         //取购物车商品列表
         List<TbItem> cartItemList = getCartItemList(request);
         //判断商品在购物车中是否存在

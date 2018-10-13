@@ -9,6 +9,7 @@ import com.taotao.pojo.TbContentCategoryExample;
 import com.taotao.pojo.TbContentCategoryExample.Criteria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -71,6 +72,33 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 
         //返回结果
         return TaotaoResult.ok(contentCategory);
+    }
+
+    // 仅实现删除叶子节点
+    @Override
+    public TaotaoResult deleteContentCategory(Long id) {
+        TbContentCategory tbContentCategory = contentCategoryMapper.selectByPrimaryKey(id);
+        // 删除叶子节点
+        tbContentCategory.setStatus(2);
+        int i = contentCategoryMapper.updateByPrimaryKey(tbContentCategory);
+
+        // 处理父节点
+        TbContentCategoryExample tbContentCategoryExample = new TbContentCategoryExample();
+        Criteria criteria = tbContentCategoryExample.createCriteria();
+        criteria.andParentIdEqualTo(tbContentCategory.getParentId());
+        criteria.andStatusEqualTo(1);
+
+        List<TbContentCategory> tbContentCategoryList = contentCategoryMapper.selectByExample(tbContentCategoryExample);
+        //判断父节点有没有状态正常的子节点
+        if (CollectionUtils.isEmpty(tbContentCategoryList)) {
+            TbContentCategory parent = contentCategoryMapper.selectByPrimaryKey(tbContentCategory.getParentId());
+            //父节点改为叶子节点
+            parent.setIsParent(false);
+            //更新父节点
+            contentCategoryMapper.updateByPrimaryKey(parent);
+        }
+
+        return TaotaoResult.ok(i);
     }
 
 }

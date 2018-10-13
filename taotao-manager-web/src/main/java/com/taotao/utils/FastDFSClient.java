@@ -23,8 +23,6 @@ public class FastDFSClient {
 
     /**
      * 上传文件方法
-     * <p>Title: uploadFile</p>
-     * <p>Description: </p>
      *
      * @param fileName 文件全路径
      * @param extName  文件扩展名，不包含（.）
@@ -57,7 +55,6 @@ public class FastDFSClient {
      * @throws Exception
      */
     public String uploadFile(byte[] fileContent, String extName, NameValuePair[] metas) throws Exception {
-
         String result = storageClient.upload_file1(fileContent, extName, metas);
         return result;
     }

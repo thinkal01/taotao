@@ -1,12 +1,11 @@
 package com.taotao.search.service.impl;
 
-import org.apache.solr.client.solrj.SolrQuery;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.taotao.common.pojo.SearchResult;
 import com.taotao.search.dao.SearchDao;
 import com.taotao.search.service.SearchService;
+import org.apache.solr.client.solrj.SolrQuery;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * 搜索服务功能实现
